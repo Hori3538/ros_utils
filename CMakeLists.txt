@@ -22,3 +22,17 @@ target_link_libraries(
     odom_topic_to_tf_node
     ${catkin_LIBRARIES}
     )
+
+add_executable(publish_odom_as_pose_node src/publish_odom_as_pose_node.cpp src/publish_odom_as_pose.cpp)
+add_dependencies(publish_odom_as_pose_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(
+    publish_odom_as_pose_node
+    ${catkin_LIBRARIES}
+    )
+
+add_executable(odom_transformer_node src/odom_transformer_node.cpp src/odom_transformer.cpp)
+add_dependencies(odom_transformer_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(
+    odom_transformer_node
+    ${catkin_LIBRARIES}
+    )

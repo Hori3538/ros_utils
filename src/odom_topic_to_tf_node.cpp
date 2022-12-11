@@ -8,6 +8,6 @@ int main(int argc, char** argv)
     ros::NodeHandle private_nh("~");
     ros_utils::OdomTopicToTF odom_topic_to_tf(nh, private_nh);
 
-    odom_topic_to_tf.process();
+    ros::spin();
     return 0;
 }
